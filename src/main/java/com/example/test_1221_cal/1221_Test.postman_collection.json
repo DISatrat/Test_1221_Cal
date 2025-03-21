@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "867fbc69-8aff-4fdf-b7a0-ed35cc402380",
+		"name": "1221_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29219104",
+		"_collection_link": "https://iqmanager.postman.co/workspace/Iqmanager-Workspace~96bb4fe6-017f-4c56-8972-1cb865d527b4/collection/29219104-867fbc69-8aff-4fdf-b7a0-ed35cc402380?action=share&source=collection_link&creator=29219104"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"fghfgb\",\r\n    \"email\":\"dada@mail.ru\",\r\n    \"age\": 20,\r\n    \"weight\": 80,\r\n    \"height\": 168,\r\n    \"sex\": false,\r\n    \"aim\": \"WEIGHT_LOSS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add meal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  1, \r\n  2   \r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/1/eat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1",
+								"eat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "get Daily Report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/reports/daily/1?date=2025-03-21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reports",
+								"daily",
+								"1"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-03-21"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "is Within Calorie Limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reports/check-calories/1?date=2025-03-21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reports",
+								"check-calories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-03-21"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "food",
+			"item": [
+				{
+					"name": "add food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Яблоко\",\r\n        \"calories\": 52,\r\n        \"proteins\": 0,\r\n        \"fats\": 0,\r\n        \"carbohydrates\": 14,\r\n        \"whenAte\": \"2025-03-20T12:00:00\"\r\n    },\r\n    {\r\n        \"name\": \"Банан\",\r\n        \"calories\": 89,\r\n        \"proteins\": 1,\r\n        \"fats\": 0,\r\n        \"carbohydrates\": 23\r\n        // \"whenAte\": \"2025-03-21T14:00:00\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"food"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
